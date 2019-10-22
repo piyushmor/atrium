@@ -27,6 +27,7 @@ interface AnyAssertions {
     fun <T> notToBe(subjectProvider: SubjectProvider<T>, expected: T): Assertion
     fun <T> isSame(subjectProvider: SubjectProvider<T>, expected: T): Assertion
     fun <T> isNotSame(subjectProvider: SubjectProvider<T>, expected: T): Assertion
+    fun <T> isNotIn(subjectProvider: SubjectProvider<T>, expected: List<T>): Assertion
 
     fun <T : Any?> toBeNull(subjectProvider: SubjectProvider<T>): Assertion
 

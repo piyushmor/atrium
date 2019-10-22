@@ -12,6 +12,7 @@ import ch.tutteli.atrium.domain.creating.changers.ChangedSubjectPostStep
 import ch.tutteli.atrium.reporting.RawString
 import ch.tutteli.atrium.translations.DescriptionAnyAssertion.IS_NOT_SAME
 import ch.tutteli.atrium.translations.DescriptionAnyAssertion.IS_SAME
+import ch.tutteli.atrium.translations.DescriptionBasic.IS_NONE_OF
 import ch.tutteli.atrium.translations.DescriptionBasic.NOT_TO_BE
 import ch.tutteli.atrium.translations.DescriptionBasic.TO_BE
 import kotlin.jvm.JvmMultifileClass
@@ -29,6 +30,9 @@ fun <T> _isSame(subjectProvider: SubjectProvider<T>, expected: T) =
 
 fun <T> _isNotSame(subjectProvider: SubjectProvider<T>, expected: T) =
     ExpectImpl.builder.createDescriptive(subjectProvider, IS_NOT_SAME, expected) { it !== expected }
+
+fun <T> _isNoneOf(subjectProvider: SubjectProvider<T>, expected: List<T>) =
+    ExpectImpl.builder.createDescriptive(subjectProvider, IS_NONE_OF, expected) { it !== ExpectImpl.builder.list. }
 
 
 fun <T : Any?> _toBeNull(subjectProvider: SubjectProvider<T>) =

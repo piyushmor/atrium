@@ -34,6 +34,9 @@ object AnyAssertionsBuilder : AnyAssertions {
     override inline fun <T> isNotSame(subjectProvider: SubjectProvider<T>, expected: T) =
         anyAssertions.isNotSame(subjectProvider, expected)
 
+    override fun <T> isNotIn(subjectProvider: SubjectProvider<T>, expected: List<T>): Assertion =
+        anyAssertions.isNotIn(subjectProvider,expected)
+
     override inline fun <T> toBeNull(subjectProvider: SubjectProvider<T>) =
         anyAssertions.toBeNull(subjectProvider)
 

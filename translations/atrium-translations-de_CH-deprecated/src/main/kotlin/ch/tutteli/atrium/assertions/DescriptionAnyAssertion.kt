@@ -16,4 +16,5 @@ enum class DescriptionAnyAssertion(override val value: String) : StringBasedTran
     NOT_TO_BE(DescriptionBasic.NOT_TO_BE.value),
     IS_SAME(ch.tutteli.atrium.translations.DescriptionAnyAssertion.IS_SAME.value),
     IS_NOT_SAME(ch.tutteli.atrium.translations.DescriptionAnyAssertion.IS_NOT_SAME.value),
+    IS_NONE_OF(ch.tutteli.atrium.translations.DescriptionAnyAssertion.IS_NONE_OF.value),
 }
